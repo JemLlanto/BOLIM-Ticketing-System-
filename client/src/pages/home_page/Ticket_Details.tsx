@@ -166,7 +166,7 @@ export const Ticket_Details = ({
         </div>
       </DialogTitle>
       <DialogContent className=" flex flex-col gap-2">
-        <div className="w-120 flex flex-col gap-2">
+        <div className="lg:w-120 flex flex-col gap-2">
           {/* SELECT FOR DEPARTMENT */}
           <div>
             <h5 className="text-neutral-600">DEPARTMENT:</h5>
@@ -210,7 +210,7 @@ export const Ticket_Details = ({
       </DialogContent>
       {["pending", "ongoing"].includes(ticket.status) && user.is_admin ? (
         <DialogActions>
-          <div className="flex w-70/100 gap-2 me-4 mb-4">
+          <div className="flex w-80/100 lg:w-70/100 gap-2 me-4 mb-4">
             <Button
               variant="secondary"
               text={

@@ -12,6 +12,7 @@ export const Main_Layout = () => {
   const [user, set_user] = useState<user_type>();
   const [tickets, set_tickets] = useState<Ticket[]>([]);
   const navigate = useNavigate();
+  const [nav_toggle, set_nav_toggle] = useState(false);
 
   const get_all_tickets = async () => {
     const response = await fetch_tickets();
@@ -81,10 +82,19 @@ export const Main_Layout = () => {
     >
       {user ? (
         <>
-          <Nav_Bar user={user} toggle_set_show={toggle_set_show} />
+          <Nav_Bar
+            user={user}
+            toggle_set_show={toggle_set_show}
+            nav_toggle={nav_toggle}
+            set_nav_toggle={set_nav_toggle}
+          />
           <div className="h-full w-full pt-16 flex gap-5">
-            <Side_Nav_Bar user={user} />
-            <div className="h-96/100 w-full mt-5 me-5 rounded-xl">
+            <Side_Nav_Bar
+              user={user}
+              nav_toggle={nav_toggle}
+              set_nav_toggle={set_nav_toggle}
+            />
+            <div className="h-96/100 w-full m-2 lg:ms-0 lg:mt-5 lg:me-5 rounded-xl">
               <Outlet
                 context={{ user, tickets, get_all_tickets, toggle_set_show }}
               />

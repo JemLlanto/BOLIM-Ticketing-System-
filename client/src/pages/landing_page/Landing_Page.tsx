@@ -84,7 +84,7 @@ export const Landing_Page = () => {
         `}
       ></div>
       <div
-        className={`h-full w-full flex justify-center items-center overflow-x-hidden gap-10 
+        className={`h-full w-full flex flex-col justify-center items-center overflow-x-hidden gap-10 
         ${is_page_loading ? "translate-y-25 opacity-0" : "translate-y-0 opacity-100"}
         transition delay-800 duration-900 ease-in-out`}
       >

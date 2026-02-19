@@ -37,14 +37,14 @@ export const Card = ({
   return (
     <div
       className={`relative group transition-all ease-in-out bg-neutral-100 rounded-2xl flex justify-center items-center overflow-hidden cursor-pointer shadow-2xl 
-        ${opt === active ? `h-8/10 w-7/10 duration-700` : ` size-80 hover:scale-103 duration-700`} `}
+        ${opt === active ? `size-70 lg:h-8/10 lg:w-7/10 duration-700` : `size-50 lg:size-80 hover:scale-103 duration-700`} `}
       onClick={(e) => {
         e.stopPropagation();
         set_opt((prev) => (prev === active ? "" : active));
       }}
     >
       <div
-        className={`absolute w-100 flex justify-center items-center 
+        className={`absolute w-50 lg:w-100 flex justify-center items-center 
           ${
             opt === active
               ? `visible ${show ? "translate-y-0 opacity-100  delay-100" : "translate-y-20 opacity-0 delay-100"}`

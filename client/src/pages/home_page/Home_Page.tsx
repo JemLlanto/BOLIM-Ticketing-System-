@@ -71,11 +71,11 @@ export const Home_Page = () => {
         get_all_tickets={get_pending_ongoing_tickets}
       />
       <div className="h-full w-full ">
-        <div className="h-full bg-neutral-50 rounded p-5">
+        <div className="h-full bg-neutral-50 rounded p-2  lg:p-5">
           <h3>
             Ongoing Ticket/s: <strong>{tickets ? tickets.length : 0}</strong>
           </h3>
-          <div className="h-94/100 overflow-auto border border-neutral-300 bg-neutral-100 rounded flex flex-col gap-2 mt-4 p-5">
+          <div className="h-94/100 overflow-auto border border-neutral-300 bg-neutral-100 rounded flex flex-col gap-2 mt-2 lg:mt-4 p-2 lg:p-5">
             {/* CREATE NEW TICKET MODAL */}
             {!user.is_admin ? (
               <>
@@ -117,9 +117,9 @@ export const Home_Page = () => {
                       <p className="text-neutral-700">
                         Reason: {ticket.reason}
                       </p>
-                      <span className="text-sm text-neutral-400">
+                      <p className="text-sm text-neutral-400">
                         {ticket.createdAt && timeAgo(String(ticket.createdAt))}
-                      </span>
+                      </p>
                     </div>
                     <div className="size-20 flex justify-center items-center border-s-2 border-dashed border-neutral-300 ps-3">
                       <div

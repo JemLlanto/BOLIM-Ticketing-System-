@@ -89,10 +89,10 @@ export const Ticket_History = () => {
       />
       <div className="h-full w-10/10 ">
         <div className="h-full w-10/10 bg-neutral-50 rounded p-5">
-          <div className="relative flex juce items-center gap-2">
+          <div className="relative flex flex-wrap items-center gap-2">
             <h3>Ticket History:</h3>
 
-            <div className="absolute left-50 flex items-center gap-2 z-10">
+            <div className=" lg:left-50 flex flex-wrap items-center gap-2">
               <Drop_Down
                 dropdown_label={
                   <>
@@ -166,7 +166,7 @@ export const Ticket_History = () => {
             </div>
           </div>
 
-          <div className="h-94/100 max-w-10/10 overflow-x-auto border border-neutral-300 bg-neutral-100 rounded flex flex-col gap-2 mt-4 p-5">
+          <div className="h-84/100 lg:h-94/100 max-w-10/10 overflow-x-auto border border-neutral-300 bg-neutral-100 rounded flex flex-col gap-2 mt-4 p-5">
             {tickets.length > 0 ? (
               tickets.map((ticket) => (
                 <div
@@ -185,9 +185,9 @@ export const Ticket_History = () => {
                       <p className="text-neutral-700">
                         Reason: {ticket.reason}
                       </p>
-                      <span className="text-sm text-neutral-400">
+                      <p className="text-sm text-neutral-400">
                         {ticket.createdAt && timeAgo(String(ticket.createdAt))}
-                      </span>
+                      </p>
                     </div>
                     <div className="size-20 flex justify-center items-center border-s-2 border-dashed border-neutral-300 ps-3">
                       <div
