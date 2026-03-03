@@ -17,7 +17,7 @@ export const Card = ({ title, value }: CardProps) => {
               : "bg-white";
   return (
     <div
-      className={`h-40 ${bg_color} p-4 rounded shadow-lg hover:scale-102 transition duration-300 ease-in-out cursor-pointer`}
+      className={`h-25 ${bg_color} p-4 rounded shadow-lg hover:scale-102 transition duration-300 ease-in-out cursor-pointer`}
     >
       <h5 className="opacity-80">{title}</h5>
       <h1 className="font-semibold">{value}</h1>

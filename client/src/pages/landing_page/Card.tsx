@@ -43,6 +43,7 @@ export const Card = ({
         set_opt((prev) => (prev === active ? "" : active));
       }}
     >
+      {/* LOGIN FORM */}
       <div
         className={`absolute w-50 lg:w-100 flex justify-center items-center 
           ${
@@ -73,7 +74,7 @@ export const Card = ({
       <div
         className={`absolute flex items-center justify-center ${opt === active ? "w-150" : `w-70`} transition-all duration-700 ease-in-out`}
       >
-        <img src={img} alt="" />
+        <img className="w-6/10 sm:w-full object-contain" src={img} alt="" />
       </div>
     </div>
   );

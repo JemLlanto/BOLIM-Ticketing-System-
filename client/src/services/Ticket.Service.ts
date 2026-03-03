@@ -50,9 +50,17 @@ interface ApiErrorResponse {
 }
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000/api";
 
-export async function fetch_tickets(): Promise<fetching_parts_response> {
+export async function fetch_tickets(
+  start_date?: Date,
+  end_date?: Date,
+): Promise<fetching_parts_response> {
   try {
-    const response = await axios.get(`${API_URL}/tickets/fetch-tickets`);
+    const response = await axios.get(`${API_URL}/tickets/fetch-tickets`, {
+      params: {
+        start_date: start_date?.toISOString(),
+        end_date: end_date?.toISOString(),
+      },
+    });
 
     if (response.status === 200) {
       // console.log("Tickets Fetched: ", response.data);
@@ -105,6 +113,8 @@ export async function fetch_tickets_by_date(
   user_id?: number | null,
 ): Promise<fetching_parts_response> {
   try {
+    // console.log("Data on service: ", start_date, end_date, user_id);
+
     const response = await axios.get(
       `${API_URL}/tickets/fetch-tickets-by-date`,
       {

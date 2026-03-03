@@ -4,7 +4,8 @@ const path = require("path");
 
 const get_all_tickets_controller = async (req, res) => {
   try {
-    const tickets = await ticket_service.get_all_tickets();
+    const { start_date, end_date } = req.query;
+    const tickets = await ticket_service.get_all_tickets(start_date, end_date);
     if (!tickets) {
       // console.log("No tickets found.");
       res.json({
@@ -70,18 +71,18 @@ const get_tickets_by_date_controller = async (req, res) => {
       user_id,
     );
     if (!tickets) {
-      // console.log("No tickets found.");
+      console.log("No tickets found.");
       res.json({
         success: false,
         message: "No tickets found.",
       });
     } else {
-      // console.log("Parts found: ", tickets);
+      console.log("Parts found: ", tickets);
       res.status(200).json({ success: true, data: tickets });
     }
   } catch (err) {
     // You can add specific error handling here if needed
-    // console.log("Error fetching tickets.");
+    console.log("Error fetching tickets.");
 
     res.json({
       success: false,

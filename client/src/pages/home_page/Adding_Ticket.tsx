@@ -98,16 +98,15 @@ export const Adding_Ticket = ({
           () => {
             handle_close();
             // RESETTING FORM DATA
-            set_form_data({
-              user_id: 0,
-              user: "",
+            set_form_data((prev) => ({
+              ...prev,
               department: "",
               station: "",
               reason: "",
               other_reason: "",
               description: "",
               status: "pending",
-            });
+            }));
             // REFETCHING TICKETS
             get_all_tickets(!user.is_admin ? user.id : null);
             Swal.fire({

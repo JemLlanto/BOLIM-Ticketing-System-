@@ -26,7 +26,7 @@ export const Side_Bar_Mobile = ({ nav_toggle, set_nav_toggle }: Props) => {
         <div className={nav_style(location.pathname, "/home")}>
           <p className="relative">
             <Ticket />
-            <h6 className={nav_title_style}>Tickets</h6>
+            <span className={nav_title_style}>Tickets</span>
           </p>
         </div>
       </Link>
@@ -34,7 +34,7 @@ export const Side_Bar_Mobile = ({ nav_toggle, set_nav_toggle }: Props) => {
         <div className={nav_style(location.pathname, "/ticket-history")}>
           <p className="relative">
             <History />
-            <h6 className={nav_title_style}>Ticket History</h6>
+            <span className={nav_title_style}>Ticket History</span>
           </p>
         </div>
       </Link>

@@ -2,8 +2,15 @@ const Ticket = require("../models/ticket.model");
 const sequelize = require("../database");
 const { Op } = require("sequelize");
 
-const get_all_tickets = async () => {
+const get_all_tickets = async (start_date, end_date) => {
+  const whereClause = {};
+  if (start_date && end_date) {
+    whereClause.createdAt = {
+      [Op.between]: [start_date, end_date],
+    };
+  }
   return await Ticket.findAll({
+    where: whereClause,
     order: [[`createdAt`, `ASC`]],
   });
 };
@@ -35,7 +42,6 @@ const get_tickets_by_date = async (start_date, end_date, user_id) => {
       [Op.between]: [start_date, end_date],
     },
   };
-  // console.log("user_id: ", user_id);
 
   if (user_id) {
     whereClause.user_id = user_id;
