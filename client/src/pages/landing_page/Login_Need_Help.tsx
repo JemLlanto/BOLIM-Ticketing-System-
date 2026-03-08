@@ -17,10 +17,12 @@ export const Login_Need_Help = ({ set_login }: Props) => {
     password: "",
   });
   const navigate = useNavigate();
+  const [loading, set_loading] = useState(false);
   const [to_register, set_to_register] = useState(false);
   const [show_password, set_show_password] = useState(false);
 
   const hanle_login = async () => {
+    set_loading(true);
     const response = await login(form_data);
 
     if (response.success) {
@@ -45,6 +47,7 @@ export const Login_Need_Help = ({ set_login }: Props) => {
         confirmButtonColor: "#d33",
       });
     }
+    set_loading(false);
   };
   const hanle_register = async () => {
     try {
@@ -117,7 +120,15 @@ export const Login_Need_Help = ({ set_login }: Props) => {
       <Button
         text={
           <>
-            <p>{to_register ? "Register User" : "Login"}</p>
+            <p>
+              {loading
+                ? to_register
+                  ? "Registering..."
+                  : "Logging in..."
+                : to_register
+                  ? "Register User"
+                  : "Login"}
+            </p>
           </>
         }
         on_click={to_register ? hanle_register : hanle_login}

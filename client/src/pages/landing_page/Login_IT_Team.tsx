@@ -17,11 +17,12 @@ export const Login_IT_Team = ({ set_login }: Props) => {
     password: "",
   });
   const navigate = useNavigate();
+  const [loading, set_loading] = useState(false);
   const [show_password, set_show_password] = useState(false);
 
   const hanle_login = async () => {
     const response = await login(form_data);
-
+    set_loading(true);
     if (response.success) {
       await Swal.fire({
         icon: "success",
@@ -44,6 +45,7 @@ export const Login_IT_Team = ({ set_login }: Props) => {
         confirmButtonColor: "#d33",
       });
     }
+    set_loading(false);
   };
 
   const handle_change = async (field: string, value: string | number) => {
@@ -82,9 +84,10 @@ export const Login_IT_Team = ({ set_login }: Props) => {
       </div>
 
       <Button
+        disabled={loading}
         text={
           <>
-            <p>Login</p>
+            <p>{loading ? "Logging in..." : "Login"}</p>
           </>
         }
         on_click={hanle_login}
