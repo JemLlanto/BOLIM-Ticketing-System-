@@ -26,7 +26,7 @@ export const Home_Page = () => {
 
     if (response.success && response.data) {
       set_tickets(response.data);
-      console.log("Tickets: ", response.data);
+      // console.log("Tickets: ", response.data);
     }
   };
   useEffect(() => {

@@ -90,9 +90,9 @@ export async function create_deparmtent(
         },
       },
     );
-    console.log("creating station");
+    // console.log("creating station");
     if (response.status === 201) {
-      console.log("station_type Created");
+      // console.log("station_type Created");
 
       return response.data;
     } else {

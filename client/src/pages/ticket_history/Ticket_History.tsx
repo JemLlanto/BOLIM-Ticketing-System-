@@ -35,7 +35,7 @@ export const Ticket_History = () => {
 
     if (response.success && response.data) {
       set_tickets(response.data);
-      console.log("Tickets by date: ", response.data);
+      // console.log("Tickets by date: ", response.data);
     }
   };
 

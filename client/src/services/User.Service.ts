@@ -92,9 +92,9 @@ export async function createUser(
         },
       },
     );
-    console.log("creating user");
+    // console.log("creating user");
     if (response.status === 201) {
-      console.log("user_type Created");
+      // console.log("user_type Created");
 
       return response.data;
     } else {

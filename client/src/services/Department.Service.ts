@@ -92,9 +92,9 @@ export async function create_deparmtent(
         },
       },
     );
-    console.log("creating department");
+    // console.log("creating department");
     if (response.status === 201) {
-      console.log("department_type Created");
+      // console.log("department_type Created");
 
       return response.data;
     } else {

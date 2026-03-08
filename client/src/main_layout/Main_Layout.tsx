@@ -19,7 +19,7 @@ export const Main_Layout = () => {
 
     if (response.success && response.data) {
       set_tickets(response.data);
-      console.log("Tickets: ", response.data);
+      // console.log("Tickets: ", response.data);
     }
   };
   useEffect(() => {

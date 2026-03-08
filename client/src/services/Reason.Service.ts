@@ -90,9 +90,9 @@ export async function create_deparmtent(
         },
       },
     );
-    console.log("creating reason");
+    // console.log("creating reason");
     if (response.status === 201) {
-      console.log("reason_type Created");
+      // console.log("reason_type Created");
 
       return response.data;
     } else {
