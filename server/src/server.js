@@ -78,8 +78,8 @@ async function startServer() {
     await sequelize.sync(); // sync models
     console.log("🧱 Models synchronized.");
 
-    app.listen(PORT, HOST, () => {
-      console.log(`🚀 Server running at http://${HOST}:${PORT}`);
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running at http://localhost:${PORT}`);
     });
   } catch (error) {
     console.error("❌ Failed to start server:", error.message);
